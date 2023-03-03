@@ -14,7 +14,8 @@ SUBDIRS = firmware/nrf/blefriend32/armgcc/ \
 		  firmware/nrf/pca10059/armgcc/    \
 		  firmware/nrf/nrf52840_mdk/armgcc/    		\
 		  firmware/nrf/nrf52840_mdk_usb_dongle/armgcc/  \
-		  firmware/nrf/pitaya_go/armgcc/
+		  firmware/nrf/pitaya_go/armgcc/   \
+		  firmware/nrf/microbit/armgcc/
 
 SUBDIRS_CLEAN := $(addsuffix clean,$(SUBDIRS))
 

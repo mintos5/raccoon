@@ -141,7 +141,7 @@ def create_config_template(config_path):
     # get connected devices
     ports = ""
     for (device, name, some_id) in comports():
-        ports += "#   { 'port':'%s', 'baud':1000000, 'rtscts':1 },  # %s - %s}\n" % (device, name, some_id) 
+        ports += "#   { 'port':'%s', 'baud':115200, 'rtscts':0 },  # %s - %s}\n" % (device, name, some_id) 
 
     print ("Creating default config")
     with open (config_path, 'wt') as fout:

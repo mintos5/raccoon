@@ -82,8 +82,14 @@
 // sync hop delay
 #define SYNC_HOP_DELAY_US 1250
 
+#ifdef MICROBIT_H
+// configure smaller rxQ for smaller RAM in Microbit
+static msgQueue_t * rxQ =  QUEUE_ALLOC( 36, PDU_META_OFFSET + 255 + CRC_LEN );
+static msgQueue_t * msgQ = QUEUE_ALLOC( 16, PDU_META_OFFSET + 80 );
+#else
 static msgQueue_t * rxQ =  QUEUE_ALLOC( 64, PDU_META_OFFSET + 255 + CRC_LEN );
 static msgQueue_t * msgQ = QUEUE_ALLOC( 16, PDU_META_OFFSET + 80 );
+#endif
 
 //#define USE_RTT_OUTPUT
 //#define AUTO_START
